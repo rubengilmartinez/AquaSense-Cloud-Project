@@ -1,7 +1,11 @@
-# **AquaSenseCloud**
+# **AquaSenseCloud: Una solución para mejorar la vida marina del Mar Menor**
 
 ## Descripción
-AquaSenseCloud es una solución basada en la nube para la recopilación, procesamiento y almacenamiento de métricas de temperatura. Utiliza tecnologías de AWS como Lambda, DynamoDB y Fargate para ofrecer una infraestructura escalable y tolerante a fallos.
+AquaSenseCloud es una solución basada en la nube para la recopilación, procesamiento y almacenamiento de métricas de temperatura de sensores del **Mar Menor** (Cartagena, Región de Murcia, España). Utiliza tecnologías de AWS como Lambda, DynamoDB y Fargate para ofrecer una infraestructura escalable y tolerante a fallos.
+
+
+![image](https://github.com/user-attachments/assets/fcc4bf3b-ad54-4455-a6a5-9d95650bc15d)
+
 
 ## Arquitectura
 El sistema se compone de los siguientes módulos:
@@ -9,8 +13,8 @@ El sistema se compone de los siguientes módulos:
 ### 1. Pipeline de Datos
 - Obtención de métricas de temperatura.
 - Procesamiento y combinación de datos.
-- Almacenamiento en **AWS DynamoDB**.
-- Notificación por **AWS SNS**.
+- Almacenamiento en **AWS DynamoDB** de las diferentes métricas.
+- Notificación de avisos por aumento de temperaturas mediante **AWS SNS**.
 
 ### 2. Servidor Flask
 - Conexión con **DynamoDB**.
@@ -22,7 +26,7 @@ El sistema se compone de los siguientes módulos:
 - **Infraestructura de Red**: VPC, Subredes Públicas, Internet Gateway.
 - **Clúster y Servicios**: Instancias **Fargate**, tareas y escalabilidad automática.
 - **Balanceador de Carga**: Agente de escucha y grupos de destino.
-- **Grupos de Seguridad**: Para el balanceador y las tareas.
+- **Grupos de Seguridad**: Para el balanceador de carga y las tareas.
 
 ### 4. Escalabilidad y Tolerancia a Fallos
 - **DynamoDB** con políticas de autoescalado.
